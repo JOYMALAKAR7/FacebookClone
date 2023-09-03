@@ -7,8 +7,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
-import VectorIcons from '../utlis/VectorIcons';
-import {Colors} from '../utlis/Colors';
+import VectorIcon from '../utils/VectorIcon';
+import {Colors} from '../utils/Colors';
 import Logo from '../assets/images/logo.png';
 import MetaLogo from '../assets/images/meta-logo.png';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -20,9 +20,12 @@ const LoginScreen = ({navigation}) => {
   const onCreateAccount =()=>{
     navigation.navigate("RegisterScreen")
   }
+  const onLogin = () => {
+    navigation.navigate("MainScreen")
+  };
   return (
     <View style={styles.Container}>
-      <VectorIcons
+      <VectorIcon
         name="arrow-back"
         size={20}
         color={Colors.black}
@@ -43,7 +46,7 @@ const LoginScreen = ({navigation}) => {
           style={styles.textInoutBox}
           secureTextEntry={true}
         />
-        <TouchableOpacity style={styles.loginButton}>
+        <TouchableOpacity style={styles.loginButton} onPress={onLogin}>
           <Text style={styles.login}>Log In</Text>
         </TouchableOpacity>
         <Text style={styles.forgotPassword}>Forgot Password?</Text>

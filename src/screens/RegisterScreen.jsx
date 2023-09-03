@@ -1,8 +1,8 @@
 import { View, Text,TextInput,StyleSheet,TouchableOpacity,Image } from 'react-native'
 
 import React, {useState} from 'react';
-import VectorIcons from '../utlis/VectorIcons';
-import {Colors} from '../utlis/Colors';
+import VectorIcon from '../utils/VectorIcon';
+import {Colors} from '../utils/Colors';
 import Logo from '../assets/images/logo.png';
 import MetaLogo from '../assets/images/meta-logo.png';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -18,7 +18,7 @@ const RegisterScreen = ({navigation}) => {
     }
   return (
     <View style={styles.Container}>
-    <VectorIcons
+    <VectorIcon
       name="arrow-back"
       size={20}
       color={Colors.black}

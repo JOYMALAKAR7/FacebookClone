@@ -13,10 +13,16 @@ import Logo from '../assets/images/logo.png';
 import MetaLogo from '../assets/images/meta-logo.png';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+
+import UploadStory from '../components/UploadStory';
+
+import { requestCameraPermission, openImagePicker, uploadImage,imageUri } from '../utils/imageUtils';
+import Post_upload from '../Upload/Post_upload';
 const Stack = createStackNavigator();
 const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  
   const onCreateAccount =()=>{
     navigation.navigate("RegisterScreen")
   }
@@ -25,12 +31,15 @@ const LoginScreen = ({navigation}) => {
   };
   return (
     <View style={styles.Container}>
+    <UploadStory/>
       <VectorIcon
         name="arrow-back"
         size={20}
         color={Colors.black}
         type="Ionicons"
       />
+
+    
       <View style={styles.subContainer}>
         <Image source={Logo} style={styles.logoStyle} />
         <TextInput
